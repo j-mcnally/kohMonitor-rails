@@ -1,0 +1,34 @@
+-# Always force latest IE rendering engine (even in intranet) & Chrome Frame
+%meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }/
+%meta{ :charset => "utf-8" }/
+
+- if Rails.env == 'production'
+  %meta{:name => "robot", :content => "index,follow"}
+  %meta{:name => "googlebot", :content => "index,follow"}
+  %meta{:name => "Distribution", :content => "Global"}
+  %meta{:name => "revisit-after", :content => "1days"}
+  %meta{:name => "google-site-verification", :content => ""}
+
+-# Facebook Open Graph Meta-data
+%meta{:property => "og:title", :content => ""}
+%meta{:property => "og:description", :content => ""}
+%meta{:property => "og:type", :content => "article"}
+%meta{:property => "og:image", :content => ""}
+%meta{:property => "og:url", :content => request.url}
+%meta{:property => "og:site_name", :content => ""}
+
+-# Icon/Favicon
+%link{:rel => 'icon', :href => 'http://c475109.r9.cf2.rackcdn.com/kohv3/favicon.png', :type => 'image/x-icon'}
+%link{:rel => 'shortcut icon', :href => 'http://c475109.r9.cf2.rackcdn.com/kohv3/favicon.png', :type => 'image/x-icon'}
+%link{:rel => 'apple-touch-icon', :href => 'http://c475109.r9.cf2.rackcdn.com/kohv3/favicon.png', :type => 'image/x-icon'}
+
+-# Meta Description and keyword
+%meta{:name => 'description', :content => ""}
+%meta{:name => 'keywords', :content => ""}
+
+%title Page Title
+
+-# Stylesheet, javascript and csrf token
+= stylesheet_link_tag :application
+= javascript_include_tag :application
+= csrf_meta_tag

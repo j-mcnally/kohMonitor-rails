@@ -1,0 +1,39 @@
+!!! 5
+- conditional_html 'en' do
+
+  %head
+    -# Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }/
+    %meta{ :charset => "utf-8" }/
+
+    -# Icon/Favicon
+    %link{:rel => 'icon', :href => 'http://c475109.r9.cf2.rackcdn.com/kohv3/favicon.png', :type => 'image/x-icon'}
+    %link{:rel => 'shortcut icon', :href => 'http://c475109.r9.cf2.rackcdn.com/kohv3/favicon.png', :type => 'image/x-icon'}
+    %link{:rel => 'apple-touch-icon', :href => 'http://c475109.r9.cf2.rackcdn.com/kohv3/favicon.png', :type => 'image/x-icon'}
+
+    %title Admin
+
+    -# Stylesheet, javascript and csrf token
+    = stylesheet_link_tag :admin
+    = javascript_include_tag :admin
+    = csrf_meta_tag
+
+  %body
+  
+    .navbar.navbar-fixed-top
+      .navbar-inner.clearfix
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#"} Kohdr :: Admin
+          .container.nav-collapse
+            %ul.nav
+              %li= link_to "Headlines", admin_headlines_path
+              %li= link_to "Pages", admin_pages_path
+              - if current_user
+                %li= link_to "Logout", destroy_user_session_path, :method => :delete
+    
+    
+    = yield

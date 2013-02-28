@@ -1,0 +1,14 @@
+.searchable-sortable-pagination-form.quick_search
+  = semantic_form_for :searchable, :html => { :method => :get } do |f|
+    %i.icon-search
+    = f.inputs :class => "quick_search_top" do
+      - search_fields.each_index do |i|
+        - field_name = search_fields[i][:name]
+        - current_value = params.key?('searchable') ? params['searchable'][field_name] : search_fields[i][:default]
+        - if search_fields[i][:as] == :string
+          = text_field :searchable, field_name, :value => current_value, :id => "quick_search_input"
+
+      = hidden_field_tag :direction, params[:direction]
+      = hidden_field_tag :sort, params[:sort]
+      = hidden_field_tag :per_page, params[:per_page]
+    

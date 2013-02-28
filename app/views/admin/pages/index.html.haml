@@ -1,0 +1,24 @@
+%section#content.container
+  .page-header
+    = link_to new_admin_page_path, :class => 'btn btn-primary' do
+      %i.icon-plus.icon-white
+      New Page
+    %h1 Listing pages
+
+  %table.table.table-bordered.table-striped
+    %thead
+      %tr
+        %th Url
+        %th Duration
+        %th
+        %th
+        %th
+
+    %tbody
+      - @pages.each do |page|
+        %tr
+          %td= page.url
+          %td= page.duration
+          %td= link_to 'Show', [:admin, page]
+          %td= link_to 'Edit', edit_admin_page_path(page)
+          %td= link_to 'Destroy', [:admin, page], :confirm => 'Are you sure?', :method => :delete

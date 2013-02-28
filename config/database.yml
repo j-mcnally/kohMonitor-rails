@@ -1,0 +1,33 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: <%= ENV['DATABASE_NAMESPACE'] %>_development
+  pool: 5
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  host: <%= ENV['MYSQL_HOST'] %>
+  port: <%= ENV['MYSQL_PORT'] %>
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: <%= ENV['DATABASE_NAMESPACE'] %>_test
+  pool: 5
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  host: <%= ENV['MYSQL_HOST'] %>
+  port: <%= ENV['MYSQL_PORT'] %>
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: <%= ENV['DATABASE_NAMESPACE'] %>_production
+  #database: <%= ENV['DATABASE_NAMESPACE'] %>_development
+  pool: 5
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  host: <%= ENV['MYSQL_HOST'] %>
+  port: <%= ENV['MYSQL_PORT'] %>

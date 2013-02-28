@@ -1,0 +1,24 @@
+@import "bootstrap";
+
+body {
+  margin-top: 60px;
+}
+
+// Search form
+.searchable-sortable-pagination-form.quick_search {
+  position: relative;
+  
+  i {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+  }
+  
+  fieldset.quick_search_top {
+    input#quick_search_input {
+      width: 255px;
+      padding: 5px 10px;
+    }
+  }
+  
+}

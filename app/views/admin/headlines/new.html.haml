@@ -1,0 +1,8 @@
+%section#content.container
+  .page-header
+    = link_to admin_headlines_path, :class => 'btn' do
+      %i.icon-list-alt
+      Back
+    %h1 New headline
+
+  = render 'form'

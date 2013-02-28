@@ -1,0 +1,15 @@
+%section#content.container
+  .page-header
+    = link_to admin_pages_path, :class => 'btn' do
+      %i.icon-list-alt
+      Back
+    = link_to edit_admin_page_path(@page), :class => 'btn btn-primary' do
+      %i.icon-pencil.icon-white
+      Edit
+    %h1 Listing pages
+
+  %dl
+    %dt Url:
+    %dd= @page.url
+    %dt Duration:
+    %dd= @page.duration

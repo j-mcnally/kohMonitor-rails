@@ -1,0 +1,22 @@
+%section#content.container
+  .content
+    .row-fluid
+      .span8
+        %h2 Users
+      .span4
+        = quick_ssp_search_form User
+    .row-fluid
+      %table.table.table-striped
+        %tr
+          %th.select
+          %th.first_name= ssp_sort_link :first_name
+          %th.last_name= ssp_sort_link :last_name
+          %th.email= ssp_sort_link :email
+          %th.admin= ssp_sort_link :admin
+          %th.options Options
+        
+        - users = @users
+        = render users
+          
+        
+        

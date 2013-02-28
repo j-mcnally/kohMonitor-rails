@@ -1,0 +1,10 @@
+= simple_form_for([:admin, @page], :defaults => { :input_html => { :class => 'input-xlarge' } }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :url
+    = f.input :duration
+    = f.input :login_script
+
+  .form-actions
+    = f.button :submit, :class => "btn-primary"

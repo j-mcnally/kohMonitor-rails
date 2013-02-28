@@ -1,0 +1,7 @@
+%tr{:user => user.id, :class => "node #{'deleted' if user.deleted_at}", :id => "sort_order_#{user.id}"}
+  %td.select_item= check_box_tag 'model[]', false          
+  %td.first_name= user.first_name
+  %td.last_name= user.last_name
+  %td.email= user.email
+  %td.admin= user.admin ? "Yes" : "No"
+  %td.options
